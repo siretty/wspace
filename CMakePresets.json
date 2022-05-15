@@ -1,0 +1,51 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "hidden": true,
+      "name": "cfg-gcc_base",
+      "generator": "Ninja",
+      "cacheVariables": {
+        "BUILD_TESTING": {
+          "type": "BOOL",
+          "value": "ON"
+        }
+      },
+      "vendor": {
+        "jetbrains.com/clion": {
+          "toolchain": "gcc"
+        }
+      }
+    },
+    {
+      "inherits": [
+        "cfg-gcc_base"
+      ],
+      "name": "cfg-gcc-dbg",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      },
+      "binaryDir": "build/gcc/dbg"
+    },
+    {
+      "inherits": [
+        "cfg-gcc_base"
+      ],
+      "name": "cfg-gcc-rel",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      },
+      "binaryDir": "build/gcc/rel"
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "bld-gcc-dbg",
+      "configurePreset": "cfg-gcc-dbg"
+    },
+    {
+      "name": "bld-gcc-rel",
+      "configurePreset": "cfg-gcc-rel"
+    }
+  ]
+}
