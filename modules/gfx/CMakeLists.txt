@@ -20,4 +20,5 @@ wspace_module(
     LINK_MODULE support
 
     LINK_PUBLIC glad
+    LINK_PUBLIC glm
 )

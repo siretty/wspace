@@ -34,6 +34,10 @@ function(wspace_module module_name)
           PROPERTIES
           WSPACE_UTEST_COMPONENT "${_component}"
       )
+      target_link_libraries(
+          "${component_utest_executable_target}"
+          PRIVATE gtest_main
+      )
 
       list(APPEND _module_utest_executable_targets "${component_utest_executable_target}")
     endif ()

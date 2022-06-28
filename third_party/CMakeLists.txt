@@ -31,6 +31,18 @@ target_include_directories(glad PUBLIC glad/include)
 add_subdirectory(glfw EXCLUDE_FROM_ALL)
 
 # ============================================================
+# GLM
+# ============================================================
+
+add_subdirectory(glm EXCLUDE_FROM_ALL)
+
+# ============================================================
+# Google Test & Mock
+# ============================================================
+
+add_subdirectory(googletest EXCLUDE_FROM_ALL)
+
+# ============================================================
 # ImGUI
 # ============================================================
 
@@ -51,3 +63,4 @@ add_library(
 )
 target_include_directories(imgui PUBLIC imgui)
 target_include_directories(imgui PUBLIC imgui/backends)
+target_link_libraries(imgui PUBLIC glfw)
